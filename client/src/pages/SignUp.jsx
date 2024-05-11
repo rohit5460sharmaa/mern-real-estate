@@ -3,31 +3,39 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
+
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  //Handle Change function
   const handleChange = (e) => {
     setFormData(
       {
-        ...formData,
+        ...formData, //with the help of this it store the value 
         [e.target.id]: e.target.value,
       });
   };
 
+  //HandleSubmit function
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    //fetch is a built-in JavaScript function
+    //that allows you to make HTTP requests to servers. 
+    // Here, it's being used to send a POST request. 
+
     try{
       setLoading(true);
-      const res = await fetch('/api/auth/signup', 
+      const res = await fetch('/api/auth/signup',      //proxy from vite.config.js
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData), //convert js object into json fromat
       });
-      const data = await res.json();
+      const data = await res.json(); //response from server store into res & convert into json format
       console.log(data);
       if(data.success == false){
         setError(data.message);
@@ -36,7 +44,7 @@ export default function SignUp() {
       }
       setLoading(false);
       setError(null);
-      navigate('/sign-in');
+      navigate('/sign-in');  // navigate to sign in page  loading false 
     }
       catch(error){
       setLoading(false);
@@ -67,7 +75,8 @@ export default function SignUp() {
           <span className='text-blue-700'>Sign in</span>
         </Link>
       </div>
-      {error && <p className='text-red-500-mt-5'>{error}</p>}
+      {error && <p className='text-red-500-mt-5'>{error}</p>}         {/* show error on display */}
+
     </div>
   )
 }
