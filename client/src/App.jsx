@@ -18,7 +18,7 @@ export default function App() {
     <Route path='/about' element={<About/>}/>
     {/* in this we cover profile with private route component */}
     <Route element={<PrivateRoute/>}>
-      <Route path='/profile' element={<Profile/>}/>
+       <Route path='/profile' element={<Profile />} />
     </Route>
     
 
