@@ -1,9 +1,11 @@
 **Real Estate Website**
+
 **Overview**
 This project is a full-featured real estate website built using the MERN stack (MongoDB, Express.js, React.js, Node.js).
 It provides a platform for users to browse, search, and list real estate properties, offering a seamless experience for both buyers and sellers.
 
 **Features**
+
 **User Authentication:** Secure sign-up and login functionality using JWT.
 
 **Property Listings:** Users can view detailed property listings with images, descriptions, and pricing information.
@@ -26,7 +28,7 @@ It provides a platform for users to browse, search, and list real estate propert
 
 **JWT:** JSON Web Tokens for user authentication and authorization.
 
-**
+
 ## Access the website
 
 **You can access the deployed project at** [Deployment Link](https://mern-real-estate-rcsf.onrender.com).**
